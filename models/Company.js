@@ -19,7 +19,7 @@ const CompanySchema = new Schema({
   facebook_url: {
     type: String
   },
-  instagram: {
+  instagram_url: {
     type: String
   },
   created_at: {
