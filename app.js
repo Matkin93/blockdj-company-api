@@ -15,7 +15,7 @@ const jwtCheck = jwt({
         jwksRequestsPerMinute: 5,
         jwksUri: "https://blockdj.eu.auth0.com/.well-known/jwks.json"
     }),
-    audience: 'http://blockdj-company-api.example.com',
+    audience: "http://blockdj-company-api.example.com",
     issuer: "https://blockdj.eu.auth0.com/",
     algorithms: ['RS256']
 });
