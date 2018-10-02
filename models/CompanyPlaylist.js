@@ -17,7 +17,6 @@ const CompanyPlaylistSchema = new Schema({
   updated_at: {
     type: Date
   }
-
 })
 
 module.exports = mongoose.model('company-playlists', CompanyPlaylistSchema);

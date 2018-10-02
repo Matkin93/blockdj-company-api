@@ -8,9 +8,8 @@ const OfferAreaSchema = new Schema({
     required: true
   },
   area_id: {
-    //area schema is in the app.js BE. Implement one here in company api?
-    ype: mongoose.Schema.Types.ObjectId,
-    ref: 'area',
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'areas',
     required: true
   },
 })
