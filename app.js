@@ -20,7 +20,7 @@ const jwtCheck = jwt({
     algorithms: ['RS256']
 });
 
-app.use(jwtCheck)
+//app.use(jwtCheck)
 
 app.use(bodyParser.json());
 
@@ -42,7 +42,7 @@ app.use('/*', (req, res, next) => {
     next({msg: 'Page not found', status: 404});
 });
 
-app.use((err, req, res, next) => {
+app.use(({msg, status}, req, res, next) => {
     if (status) res.status(status).send({status, msg});
     else res.status(500).send({msg:'Internal server error', status: 500});
 });
