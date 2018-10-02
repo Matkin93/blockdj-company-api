@@ -20,7 +20,7 @@ const jwtCheck = jwt({
     algorithms: ['RS256']
 });
 
-//app.use(jwtCheck)
+app.use(jwtCheck)
 
 app.use(bodyParser.json());
 
