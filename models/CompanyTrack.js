@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 const CompanyTrackSchema = new Schema({
   playlist: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'company-playlists',
+    ref: 'company_playlists',
     required: true
   },
   name: {
