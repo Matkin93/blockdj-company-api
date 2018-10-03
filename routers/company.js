@@ -1,7 +1,7 @@
 const companyRouter = require('express').Router();
 const {getCompanies, getCompanyById, updateCompanyById} = require('../controllers/companies');
 const {getCompanyPlaylists, addCompanyPlaylist, getCompanyPlaylistById, updateCompanyPlaylistById} = require('../controllers/playlists');
-const {getCompanyOffers, addCompanyOffer} = require('../controllers/offers');
+const {getCompanyOffers, getCompanyOfferById, addCompanyOffer, updateCompanyOfferById, deleteCompanyOfferById} = require('../controllers/offers');
 
 companyRouter.route('/')
     .get(getCompanies)
@@ -21,5 +21,10 @@ companyRouter.route('/:company_id/playlists/:playlist_id')
 companyRouter.route('/:company_id/offers')
     .get(getCompanyOffers)
     .post(addCompanyOffer)
+
+companyRouter.route('/:company_id/offers/:offer_id')
+    .get(getCompanyOfferById)
+    .put(updateCompanyOfferById)
+    .delete(deleteCompanyOfferById)
 
 module.exports = companyRouter;
