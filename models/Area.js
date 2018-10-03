@@ -29,6 +29,9 @@ const AreaSchema = new Schema({
     image_url: {
         type: String,
     },
+    colour: {
+        type: String
+    },    
     bounds: {
         type: polygonSchema,      
         required: true

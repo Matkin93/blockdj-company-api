@@ -1,3 +1,9 @@
 module.exports = {
-    Company: require('./Company')
+    Area: require('./Area'),
+    City: require('./City'),
+    Company: require('./Company'),
+    CompanyPlaylist: require('./CompanyPlaylist'),
+    CompanyTrack: require('./CompanyTrack'),
+    Offer: require('./Offer'),
+    OfferArea: require('./OfferArea')
 };
