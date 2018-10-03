@@ -1,7 +1,11 @@
 const {Company, CompanyPlaylist} = require('../models');
 
 module.exports.getCompanyPlaylists = (req, res, next) => {
-    CompanyPlaylist.find({_id: req.params.company_id, user_id: req.user.sub})
+    Company.findOne({_id: req.params.company_id, user_id: req.user.sub})
+        .then(company => {
+            if (!company) return Promise.reject({msg: 'Company not found or no permission', status: 400})
+            return CompanyPlaylist.find({company: req.params.company_id});
+        })
         .then(playlists => {
             res.status(200).send({playlists})
         })
