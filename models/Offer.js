@@ -19,6 +19,10 @@ const OfferSchema = new Schema({
   image_url: {
     type: String
   },
+  areas: [{
+    type: mongoose.Schema.Types.ObjectId, 
+    ref:'areas'
+  }],
   created_at: {
     type: Date,
     default: Date.now

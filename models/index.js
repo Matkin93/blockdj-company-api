@@ -5,5 +5,4 @@ module.exports = {
     CompanyPlaylist: require('./CompanyPlaylist'),
     CompanyTrack: require('./CompanyTrack'),
     Offer: require('./Offer'),
-    OfferArea: require('./OfferArea')
 };
