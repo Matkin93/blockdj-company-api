@@ -14,4 +14,4 @@ const OfferAreaSchema = new Schema({
   },
 })
 
-module.exports = mongoose.model('offers', OfferAreaSchema);
+module.exports = mongoose.model('offer_areas', OfferAreaSchema);

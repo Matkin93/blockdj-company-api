@@ -19,4 +19,4 @@ const CompanyPlaylistSchema = new Schema({
   }
 })
 
-module.exports = mongoose.model('company-playlists', CompanyPlaylistSchema);
+module.exports = mongoose.model('company_playlists', CompanyPlaylistSchema);

@@ -25,4 +25,4 @@ const CompanyTrackSchema = new Schema({
   }
 })
 
-module.exports = mongoose.model('company-tracks', CompanyTrackSchema);
+module.exports = mongoose.model('company_tracks', CompanyTrackSchema);

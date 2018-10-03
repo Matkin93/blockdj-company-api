@@ -1,9 +1,17 @@
 const {Company} = require('../models');
  
 module.exports.getCompanies = (req, res, next) => {
-    Company.find({_user_id: req.user.sub})
+    Company.find({user_id: req.user.sub})
         .then(companies => {
             res.status(200).send({companies})
+        })
+        .catch(err => next(err));
+}
+
+module.exports.getCompanyById = (req, res, next) => {
+    Company.find({_id: req.params.company_id, user_id: req.user.sub})
+        .then(company => {
+            res.status(200).send({company})
         })
         .catch(err => next(err));
 }
