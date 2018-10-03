@@ -12,6 +12,19 @@ module.exports.getCompanyPlaylists = (req, res, next) => {
         .catch(err => next(err));
 }
 
+module.exports.getCompanyPlaylistById = (req, res, next) => {
+    Company.findOne({_id: req.params.company_id, user_id: req.user.sub})
+        .then(company => {
+            if (!company) return Promise.reject({msg: 'Company not found or no permission', status: 400})
+            return CompanyPlaylist.find({_id: req.params.playlist_id, company: req.params.company_id});
+        })
+        .then(playlist => {
+            if (!playlist) return Promise.reject({msg: 'Playlist not found or no permission', status: 400})
+            res.status(200).send({playlist})
+        })
+        .catch(err => next(err));
+}
+
 module.exports.addCompanyPlaylist = (req, res, next) => {
     Company.findOne({_id: req.params.company_id, user_id: req.user.sub})
         .then(company => {
@@ -20,6 +33,22 @@ module.exports.addCompanyPlaylist = (req, res, next) => {
         })
         .then(playlist => {
             res.status(201).send({playlist})
+        })
+        .catch(err => next(err));
+}
+
+module.exports.updateCompanyPlaylistById = (req, res, next) => {
+    Company.findOne({_id: req.params.company_id, user_id: req.user.sub})
+        .then(company => {
+            if (!company) return Promise.reject({msg: 'Company not found or no permission', status: 400});
+            else return CompanyPlaylist.findOne({_id: req.params.playlist_id, company: req.params.company_id});
+        })
+        .then(playlist => {
+            if (!playlist) return Promise.reject({msg: 'Playlist not found or no permission', status: 400})
+            else return CompanyPlaylist.findOneAndUpdate({_id:req.params.playlist_id}, {...req.body, company: req.params.company_id}, {new:true});
+        })
+        .then(playlist => {
+            res.status(200).send({playlist})
         })
         .catch(err => next(err));
 }
