@@ -37,16 +37,16 @@ module.exports.addCompanyPlaylist = (req, res, next) => {
         .catch(err => next(err));
 }
 
-module.exports.deleteCompanyPlaylist = (req, res, next) => {
+module.exports.deleteCompanyPlaylistById = (req, res, next) => {
     Company.findOne({_id: req.params.company_id, user_id: req.user.sub})
         .then(company => {
             if (!company) return Promise.reject({msg: 'Company not found or no permission', status: 400})
-            else return CompanyPlaylist.findOne({_id: req.params.playlist_id, company_id: company._id})
+            else return CompanyPlaylist.findOne({_id: req.params.playlist_id, company: company._id})
         })
         .then(playlist => {
             return Promise.all([
                 playlist,
-                CompanyPlaylist.deleteOne({_id: req.params.playlist_id})
+                CompanyPlaylist.deleteOne({_id: playlist._id})
             ])
         })
         .then(([playlist, results]) => {
@@ -54,7 +54,6 @@ module.exports.deleteCompanyPlaylist = (req, res, next) => {
         })
         .catch(err => next(err));
 }
-
 
 module.exports.updateCompanyPlaylistById = (req, res, next) => {
     Company.findOne({_id: req.params.company_id, user_id: req.user.sub})
