@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
     res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, PATCH, DELETE, OPTIONS');
     next();
 });
@@ -42,14 +42,9 @@ app.use('/*', (req, res, next) => {
     next({msg: 'Page not found', status: 404});
 });
 
-app.use((err, req, res, next) => {
-    console.log(err);
-    res.status(500).send({msg:'Internal server error', status: 500});
+app.use(({msg, status}, req, res, next) => {
+     if (status) res.status(status).send({status, msg});
+     else res.status(500).send({msg:'Internal server error', status: 500});
 });
-
-// app.use(({msg, status}, req, res, next) => {
-//     if (status) res.status(status).send({status, msg});
-//     else res.status(500).send({msg:'Internal server error', status: 500});
-// });
 
 module.exports = app;
