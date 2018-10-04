@@ -1,6 +1,6 @@
 [
     {
-        "user_id": "1234",
+        "user_id": "auth0|5bb23d9ef3f3cd1b18048326",
         "name": "The Washhouse",
         "details": "Brick walled cocktail bar offering a trendy environment for serious drinks.",
         "website": "http://the-washhouse.co.uk/",
@@ -8,7 +8,7 @@
         "instagram_url": "https://instagram.com/thewashhouse"
     },
     {
-        "user_id": "1234",
+        "user_id": "auth0|5bb23d9ef3f3cd1b18048326",
         "name": "Arcane",
         "details": "We might be hidden away in the basement of an old Victorian building, but Arcane Cocktail Bar Manchester is no secret.",
         "website": "https://cocktailbarmanchester.com/",
