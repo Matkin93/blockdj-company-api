@@ -1,0 +1,24 @@
+[ 
+    {
+        "company_id": "The Washhouse",
+        "title": "50% Off Meal for 2",
+        "description": "50% off a meal for 2 in our restaurant",
+        "redemption": "Please give us a call on (0161) 121 2122",
+        "image_url": "http://www.bbc.co.uk",
+        "areas": [
+            "Chinatown",
+            "Victoria"
+        ]
+    },
+    {
+        "company_id": "Arcane",
+        "title": "2 for 1",
+        "description": "2 Meals for the price of 1 in our lounge bar",
+        "redemption": "Please give us a call on (0161) 121 2122",
+        "image_url": "http://www.bbc.co.uk",
+        "areas": [
+            "Northern Quarter",
+            "Oxford Road"
+        ]
+    }    
+]

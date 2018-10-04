@@ -1,0 +1,32 @@
+[
+    {
+        "playlist":"Arcane Jazz Hits",
+        "name":"Redemption ",
+        "artist":"Joe Bonamassa",
+        "album":"Joe Bonamassa"
+    },
+    {
+        "playlist":"Arcane Jazz Hits",
+        "name": "The Big Bad Blues",
+        "artist": "Billy F Gibbons",
+        "album": "Billy F Gibbons"
+    },
+    {
+        "playlist": "Arcane Jazz Hits",
+        "name": "Love is here to stay",
+        "artist": "Tony Bennett & Diana Krall",
+        "album": "Tony Bennett"
+    },
+    {
+        "playlist": "The Washhouse Blues",
+        "name": "My Way",
+        "artist": "Willy Nelson",
+        "album": "My Way"        
+    },
+    {
+        "playlist": "The Washhouse Blues",
+        "name": "Kind of Blue",
+        "artist": "Miles Davis",
+        "album": "Kind of Blue"        
+    }
+]
