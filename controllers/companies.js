@@ -9,7 +9,7 @@ module.exports.getCompanies = (req, res, next) => {
 }
 
 module.exports.getCompanyById = (req, res, next) => {
-    Company.find({_id: req.params.company_id, user_id: req.user.sub})
+    Company.findOne({_id: req.params.company_id, user_id: req.user.sub})
         .then(company => {
             res.status(200).send({company})
         })
