@@ -1,10 +1,13 @@
-const {Offer, Company} = require('../models');
+const {Offer, Company, Area} = require('../models');
 
 module.exports.getCompanyOffers = (req, res, next) => {
     Company.findOne({_id: req.params.company_id, user_id: req.user.sub})
         .then(company => {
             if (!company) return Promise.reject({msg: 'Company not found or no permission', status: 400});
             else return Offer.find({company_id: req.params.company_id});
+        })
+        .then(offers => {
+            return Area.populate(offers, 'areas');
         })
         .then(offers => {
             res.status(200).send({offers});
