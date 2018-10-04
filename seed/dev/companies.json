@@ -14,5 +14,13 @@
         "website": "https://cocktailbarmanchester.com/",
         "facebook_url": "https://facebook.com/cocktailbarmanchester",
         "instagram_url": "https://instagram.com/cocktailbarmanchester"
+    },
+    {
+        "user_id": "1234",
+        "name": "I shouldn't be seen",
+        "details": "We might be hidden away in the basement of an old Victorian building, but Arcane Cocktail Bar Manchester is no secret.",
+        "website": "https://iamhidden.com",
+        "facebook_url": "https://facebook.com/iamhidden",
+        "instagram_url": "https://instagram.com/iamhidden"
     }
 ]
