@@ -1,7 +1,6 @@
 const {City, Area} = require('../models');
  
 module.exports.getCities = (req, res, next) => {
-   console.log(req.user);
    City.find({})
        .then(cities => {
            res.status(200).send({cities});
